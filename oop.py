@@ -21,6 +21,9 @@ class Human:
             return
         print("Meh...")
 
+    def say_hello(self):
+        print(f"Hello, my name is {self.name}")
+
 
 class AllergicHuman(Human):
     def __init__(self, name, age, favourite_food, allergic_food):
@@ -35,15 +38,20 @@ class AllergicHuman(Human):
         if food_name in ["beer", "vodka", "alcohol"]:
             return True
 
+    def say_hello(self):
+        print(f"Hello, my name is {self.name} and I can't eat {self.__allergic_food}")
+
 
 artoms = Human("Artoms", 18, "banana")
 sergejs = AllergicHuman("Sergejs", 17, "cacao", "peanuts")
 
+artoms.say_hello()
 artoms.eat("cacao")
 artoms.eat("banana")
 artoms.eat("vodka")
 artoms.eat("peanuts")
 
+sergejs.say_hello()
 sergejs.eat("cacao")
 sergejs.eat("banana")
 sergejs.eat("vodka")
